@@ -1,0 +1,18 @@
+extends layout
+
+block content
+  script(src='/javascripts/jquery.js').
+  h1= title
+  p Welcome to #{title}
+  script(type='text/javascript').
+    $.ajax({
+       dataType: 'jsonp',
+       jsonp: 'callback',
+       jsonpCallback: 'mycallback',
+       url: 'http://localhost:3001',
+       success: function(data) {
+       }
+     });
+     function mycallback(data) {
+        console.log(data);
+     }
