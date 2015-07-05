@@ -1,0 +1,10 @@
+extends layout
+
+block content
+  h1= title
+  p Welcome to #{title}
+  iframe(src='http://localhost:3001', width='500', height='400', border='none').
+  script(type='text/javascript').
+    window.onload = function() {
+      window.frames[0].postMessage('{"title": "title"}', 'http://localhost:3001');
+    }

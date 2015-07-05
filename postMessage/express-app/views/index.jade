@@ -1,0 +1,11 @@
+extends layout
+
+block content
+  h1= title
+  p Welcome to #{title}
+  script(type='text/javascript').
+     window.addEventListener('message', function(e) {
+       if (e.origin !== 'http://localhost:3000') return;
+       var data = JSON.parse(e.data);
+       document.querySelector('h1').innerHTML = data.title;
+     }, false); 
