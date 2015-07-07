@@ -134,7 +134,7 @@ CORS的实现原理很简单，只需要在响应端的头信息配置一个`Acc
 
 ![image](https://frender.github.io/blog/images/post/cross-origin/cors/res-browser.png)
 
-[☞下载JSONP例子源码☜](https://github.com/FrendEr/Cross-Origin)
+[☞下载CORS例子源码☜](https://github.com/FrendEr/Cross-Origin)
 
 <br/>
 
@@ -168,7 +168,7 @@ postMessage是html5引入的message的API，可以更加方便、有效、安全
 
 ![image](https://frender.github.io/blog/images/post/cross-origin/postMessage/browser.png)
 
-[☞下载JSONP例子源码☜](https://github.com/FrendEr/Cross-Origin)
+[☞下载postMessage例子源码☜](https://github.com/FrendEr/Cross-Origin)
 
 <br/>
 
