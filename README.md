@@ -55,7 +55,7 @@
 
 <br/>
 
-##1. JSONP
+## 1. JSONP
 
 JSONP跟JSON是什么关系？JSONP的实现原理是什么？我就不造轮子了，因为我也是看了别人的文章才理解的，直接推荐一篇[讲得很清晰的博文](http://kb.cnblogs.com/page/139725/)。了解后，就开始本地的代码测试吧。
 
@@ -70,25 +70,25 @@ JSONP跟JSON是什么关系？JSONP的实现原理是什么？我就不造轮子
 
 响应端代码：
 
-![image](https://frender.github.io/blog/images/post/cross-origin/jsonp/res-code.png)
+![image](./images/jsonp/res-code.png)
 
 响应端启动log：
 
-![image](https://frender.github.io/blog/images/post/cross-origin/jsonp/res-log.png)
+![image](./images/jsonp/res-log.png)
 
 - server2: localhost:3000，作为请求端
 
 请求端代码：
 
-![image](https://frender.github.io/blog/images/post/cross-origin/jsonp/req-code.png)
+![image](./images/jsonp/req-code.png)
 
 请求端启动log：
 
-![image](https://frender.github.io/blog/images/post/cross-origin/jsonp/req-log.png)
+![image](./images/jsonp/req-log.png)
 
 - 浏览器访问localhost:3000，响应如下：
 
-![image](https://frender.github.io/blog/images/post/cross-origin/jsonp/req-browser.png)
+![image](./images/jsonp/req-browser.png)
 
 <br/>
 
@@ -100,7 +100,7 @@ JSONP实现的原理很简单而且使用jquery的api会非常的方便，只需
 
 <br/>
 
-##2. CORS
+## 2. CORS
 
 CORS(Cross-Origin Resource Sharing)即跨域资源共享，也是一种实现跨域访问的方法。
 
@@ -112,27 +112,27 @@ CORS的实现原理很简单，只需要在响应端的头信息配置一个`Acc
 
 响应代码：
 
-![image](https://frender.github.io/blog/images/post/cross-origin/cors/res-code.png)
+![image](./images/cors/res-code.png)
 
 请求代码：
 
-![image](https://frender.github.io/blog/images/post/cross-origin/cors/req-code.png)
+![image](./images/cors/req-code.png)
 
 浏览器访问http://localhost:3000，响应如下：
 
-![image](https://frender.github.io/blog/images/post/cross-origin/cors/res-browser.png)
+![image](./images/cors/res-browser.png)
 
 - c) 设置`Access-Control-Allow-Origin: *`，注意这里的`*`是指所有来源都可以调用该接口：
 
-![image](https://frender.github.io/blog/images/post/cross-origin/cors/res-code2.png)
+![image](./images/cors/res-code2.png)
 
 请求代码：
 
-![image](https://frender.github.io/blog/images/post/cross-origin/cors/req-code.png)
+![image](./images/cors/req-code.png)
 
 浏览器访问http://localhost:3000，响应如下：
 
-![image](https://frender.github.io/blog/images/post/cross-origin/cors/res-browser.png)
+![image](./images/cors/res-browser.png)
 
 [☞下载CORS例子源码☜](https://github.com/FrendEr/Cross-Origin)
 
@@ -144,7 +144,7 @@ CORS在使用起来非常方便，但也有缺点。
 
 - ① 兼容性，下图可见，对于需要兼容IE6-7的网站来说，这种方案还是存在着不满足需求的情况。但是对于现代浏览器，特别是在移动端可以放心使用。
 
-![image](https://frender.github.io/blog/images/post/cross-origin/cors/support.png)
+![image](./images/cors/support.png)
 
 - ② 安全性
 
@@ -152,21 +152,21 @@ CORS提供了一种简易的跨域请求方案，但是并没有为安全访问�
 
 <br/>
 
-##3. postMessage
+## 3. postMessage
 
 postMessage是html5引入的message的API，可以更加方便、有效、安全的解决iframe嵌套跨域问题。详情见[postMessage使用文档 - MDN](https://developer.mozilla.org/zh-CN/docs/Web/API/Window/postMessage)。
 
 - 主页面
 
-![image](https://frender.github.io/blog/images/post/cross-origin/postMessage/parent-code.png)
+![image](./images/postMessage/parent-code.png)
 
 - iframe页面
 
-![image](https://frender.github.io/blog/images/post/cross-origin/postMessage/iframe-code.png)
+![image](./images/postMessage/iframe-code.png)
 
 - 浏览器访问http://localhost:3000，响应如下：
 
-![image](https://frender.github.io/blog/images/post/cross-origin/postMessage/browser.png)
+![image](./images/postMessage/browser.png)
 
 [☞下载postMessage例子源码☜](https://github.com/FrendEr/Cross-Origin)
 
@@ -176,7 +176,6 @@ postMessage是html5引入的message的API，可以更加方便、有效、安全
 
 postMessage使用非常简单，但是在浏览器支持上对于IE6-7存在不足，如下图：
 
-![image](https://frender.github.io/blog/images/post/cross-origin/postMessage/support.png)
+![image](./images/postMessage/support.png)
 
 但是现代浏览器对于使用postMessage还是非常有效的，特别是在移动端。
-
